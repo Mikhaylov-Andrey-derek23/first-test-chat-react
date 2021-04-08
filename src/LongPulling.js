@@ -5,8 +5,8 @@ function LongPulling(){
 
     const [messages, setMessages] = useState([]);
     const [value, setValue] = useState('');
-    //const url = 'http://localhost:5000';
-    const url = 'https://first-test-chat-long-pulling.herokuapp.com'
+    const url = 'http://localhost:5000';
+    //const url = 'https://first-test-chat-long-pulling.herokuapp.com'
 
     useEffect(() => {
         subscribe()
