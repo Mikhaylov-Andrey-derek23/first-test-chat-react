@@ -5,13 +5,15 @@ function LongPulling(){
 
     const [messages, setMessages] = useState([]);
     const [value, setValue] = useState('');
+    //const url = 'http://localhost:5000';
+    const url = 'https://first-test-chat-long-pulling.herokuapp.com'
 
     useEffect(() => {
         subscribe()
     }, [])
 
     const sendMessage = async () => {
-        await axios.post('http://localhost:5000/new-message', {
+        await axios.post(`${url}/new-message`, {
             id : Date.now(),
             message : value
         })
@@ -19,7 +21,7 @@ function LongPulling(){
 
     const subscribe = async() =>{
         try{
-            const {data} = await axios.get('http://localhost:5000/get-messages');
+            const {data} = await axios.get(`${url}/get-messages`);
             setMessages(el => [data, ...el]);
             await subscribe()
 
