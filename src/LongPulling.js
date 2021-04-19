@@ -10,7 +10,7 @@ function LongPulling(){
 
     useEffect(() => {
         subscribe()
-    })
+    }, [])
 
     const sendMessage = async () => {
         await axios.post(`${url}/new-message`, {
